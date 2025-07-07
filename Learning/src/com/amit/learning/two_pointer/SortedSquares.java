@@ -1,5 +1,7 @@
 package com.amit.learning.two_pointer;
 
+import com.amit.learning.util.PrintUtil;
+
 import java.util.Arrays;
 
 /**
@@ -37,7 +39,8 @@ public class SortedSquares {
     public static void main(String[] args) {
         int[] input = {-25, -7, -3, 0, 1,2, 5,18};
         int[] squaredSorted = sortedSquares(input);
-        System.out.println("Sorted squares: " + Arrays.toString(squaredSorted));
+        System.out.print("Sorted squares: ");
+        PrintUtil.print(squaredSorted);
     }
 }
 /**

@@ -1,6 +1,6 @@
 package com.amit.learning.sorting;
 
-import java.util.Arrays;
+import com.amit.learning.util.PrintUtil;
 
 public class BubbleSort {
     public static void bubbleSort(int[] arr){
@@ -13,7 +13,7 @@ public class BubbleSort {
                 }
             }
         }
-        System.out.println(Arrays.toString(arr));
+        PrintUtil.print(arr);
     }
 
     public static void main(String[] args) {

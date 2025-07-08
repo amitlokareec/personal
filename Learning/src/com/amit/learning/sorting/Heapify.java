@@ -57,7 +57,7 @@ public class Heapify {
             int largestElementIndex = i;          // Initialize largest as root
             int leftElementIndex = 2 * i + 1;     // Left child index
             int rightElementIndex = 2 * i + 2;    // Right child index
-
+            System.out.println("Running for: "+largestElementIndex);
             // If leftElement child is larger than root
             if (leftElementIndex < size && heap[leftElementIndex] > heap[largestElementIndex]) {
                 largestElementIndex = leftElementIndex;
@@ -83,22 +83,22 @@ public class Heapify {
         }
 
     static void minHeapify(int[] arr, int n, int i) {
-        int smallest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
+        int smallestIndex = i;
+        int leftElementIndex = 2 * i + 1;
+        int rightElementIndex = 2 * i + 2;
+        System.out.println("Running for: "+smallestIndex+" and heap Length: "+ n);
+        if (leftElementIndex < n && arr[leftElementIndex] < arr[smallestIndex])
+            smallestIndex = leftElementIndex;
 
-        if (left < n && arr[left] < arr[smallest])
-            smallest = left;
+        if (rightElementIndex < n && arr[rightElementIndex] < arr[smallestIndex])
+            smallestIndex = rightElementIndex;
 
-        if (right < n && arr[right] < arr[smallest])
-            smallest = right;
-
-        if (smallest != i) {
+        if (smallestIndex != i) {
             int temp = arr[i];
-            arr[i] = arr[smallest];
-            arr[smallest] = temp;
+            arr[i] = arr[smallestIndex];
+            arr[smallestIndex] = temp;
 
-            minHeapify(arr, n, smallest);
+            minHeapify(arr, n, smallestIndex);
         }
 
         System.out.println("After minHeapify: ");

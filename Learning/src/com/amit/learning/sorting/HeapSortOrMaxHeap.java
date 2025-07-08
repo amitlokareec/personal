@@ -6,9 +6,9 @@ import com.amit.learning.util.Util;
 public class HeapSortOrMaxHeap {
     public static void heapSort(int[] arr) {
         int n = arr.length;
-
+        int startIdx = (n / 2) - 1;
         // Step 1: Build max heap
-        for (int i = n / 2 - 1; i >= 0; i--) {
+        for (int i = startIdx; i >= 0; i--) {
             Heapify.maxHeapify(arr, n, i);
         }
 
